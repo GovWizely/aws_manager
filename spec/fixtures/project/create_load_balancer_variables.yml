@@ -1,0 +1,5 @@
+region: us-west-1
+vpc_id: vpc-12345
+load_balancer_subnets:
+- subnet-01
+- subnet-02

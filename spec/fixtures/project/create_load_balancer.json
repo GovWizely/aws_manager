@@ -1,0 +1,19 @@
+[
+  {
+    "create_load_balancer": {
+      "target_instance": {
+        "target_class_name": "Aws::ElasticLoadBalancingV2::Client"
+      },
+      "parameters": {
+        "name": "my-load-balancer",
+        "subnets": {
+          "_variable": "load_balancer_subnets"
+        }
+      },
+      "map_response_to_variable": {
+        "key": "load_balancer_arn",
+        "method": "load_balancers.first.load_balancer_arn"
+      }
+    }
+  }
+]
