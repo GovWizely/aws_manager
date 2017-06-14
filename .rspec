@@ -1,2 +1,2 @@
---require aws_manager_spec_helper
+--require awsm_spec_helper
 --color

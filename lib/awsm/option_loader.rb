@@ -1,4 +1,4 @@
-module AwsManager
+module Awsm
   class OptionLoader
     def initialize(root, variables_hash)
       @root = root

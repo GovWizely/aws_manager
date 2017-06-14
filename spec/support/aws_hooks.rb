@@ -1,5 +1,5 @@
 RSpec.configure do |config|
   config.before(:suite) do
-    AwsManager.authenticate AwsManager.root.join('spec/fixtures/project'), 'us-east-1'
+    Awsm.authenticate Awsm.root.join('spec/fixtures/project'), 'test', 'us-east-1'
   end
 end

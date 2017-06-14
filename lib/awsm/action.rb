@@ -1,8 +1,8 @@
 require 'active_support/inflector/inflections'
 
-require 'aws_manager/option_loader'
+require 'awsm/option_loader'
 
-module AwsManager
+module Awsm
   class Action
     attr_reader :config, :name, :target
 
@@ -10,7 +10,7 @@ module AwsManager
       @config = config
       @name = name
       @options = options
-      @option_loader = AwsManager::OptionLoader.new @config.root, @config.variables_hash
+      @option_loader = Awsm::OptionLoader.new @config.root, @config.variables_hash
       @target = target || detect_target
     end
 
@@ -19,9 +19,9 @@ module AwsManager
     end
 
     def execute
-      AwsManager.logger.info "#{target.class.name}: executing #{name} with:\n#{parameters.to_yaml}"
+      Awsm.logger.info "#{target.class.name}: executing #{name} with:\n#{parameters.to_yaml}"
       response = target.send name, parameters
-      AwsManager.logger.info "Response:\n#{response.inspect}"
+      Awsm.logger.info "Response:\n#{response.inspect}"
 
       if (map_response_options = @options[:map_response_to_variable])
         @config.variables_hash[map_response_options[:key]] = send_method_chain_to_response response, map_response_options[:method]

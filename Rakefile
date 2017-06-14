@@ -8,6 +8,6 @@ task default: :spec
 
 desc 'manage AWS'
 task :manage, :config_file_path do |_t, args|
-  require_relative 'lib/aws_manager'
-  AwsManager.manage args[:config_file_path]
+  require_relative 'lib/awsm'
+  Awsm.manage args[:config_file_path]
 end

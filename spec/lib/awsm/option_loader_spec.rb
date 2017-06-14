@@ -1,4 +1,4 @@
-RSpec.describe AwsManager::OptionLoader do
+RSpec.describe Awsm::OptionLoader do
   describe '#load' do
     let(:root) { Pathname.new 'spec/fixtures/project' }
 

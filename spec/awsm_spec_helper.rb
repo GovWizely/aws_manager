@@ -7,9 +7,9 @@ SimpleCov.start do
   track_files 'lib/**/*.rb'
 end
 
-require 'aws_manager'
+require 'awsm'
 
-AwsManager.logger.level = ::Logger::WARN
+Awsm.logger.level = ::Logger::WARN
 
 # avoid warnings
 require 'aws-sdk-elasticloadbalancingv2'

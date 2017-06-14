@@ -1,6 +1,6 @@
-RSpec.describe AwsManager::Action do
+RSpec.describe Awsm::Action do
   let(:config) do
-    AwsManager.load_config Pathname.new('spec/fixtures/project/create_load_balancer.json').to_s
+    Awsm.load_config Pathname.new('spec/fixtures/project/create_load_balancer.json').to_s, 'test'
   end
 
   let(:action) { config.actions.first }

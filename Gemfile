@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'activesupport'
 gem 'aws-sdk', '~> 3.0.0.rc8'
 gem 'rake'
+gem 'thor'
 
 group :development, :test do
   gem 'pry'
